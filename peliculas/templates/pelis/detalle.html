@@ -1,0 +1,26 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Peliculas{% endblock %}</h1>
+{% endblock %} 
+{% block content %}
+
+
+<!--METER ESTOS ELEMENTOS EN  UN ETIQUETA PARA QUE QUEDE MAS ORDENADO-->
+
+<h3> Titulo</h3>
+{{ info_peli['title'] }}
+
+<h3> Descripción </h3>
+<p> ({{ info_peli['description'] }}) </p>
+<h3> Año de lanzamineto </h3>
+<p> {{ info_peli['release_year'] }}</p>
+
+<h3> Actores/Actrices</h3>
+
+<ul>
+  {% for actor in actors %}
+  <li> <a href="{{url_for('actor.detalle', id=actor['actor_id'])}}">{{ actor['first_name'] }} {{ actor['last_name'] }} </a></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
+

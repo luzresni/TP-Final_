@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}idiomas{% endblock %}</h1>
+{% endblock %} {% block content %}
+<ul>
+  {% for idioma in idiomas %}
+  <li>{{ idioma['name'] }}</li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
